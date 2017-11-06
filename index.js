@@ -5,9 +5,12 @@ import {request as requestTypes, init as typeInit} from './type'
 import {getFinish, setFinish, getQueue, joinQueue, clearQueue} from './queue'
 let api = {}; // 储存所有api请求函数
 let cache = {};
-export function requestInit(requestFuncs, types) {
+export function requestInit(requestFuncs, types, isDisableQueue) {
   api = Object.assign({}, requestFuncs);
   typeInit(types);
+  if (isDisableQueue) {
+    setFinish(true)
+  }
 }
 export function doRequest(name, ...rest) {
   return new Promise((resolve, reject) => {
