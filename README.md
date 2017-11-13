@@ -11,4 +11,24 @@ Otherwise, we guarantee the order of your request which just meet your needs.
 
 ### how to use
 
+```
+import * as requestFuncs from './plaza'
+
+import {requestInit} from '../request/index'
+
+requestInit(requestFuncs /* object listed all your requests*/, fasle /* disable queue ?*/, 'firstRequest'/*the function which sends request before others*/);
+```
+
+
+
+that's all.
+
+you needn't care about has the first request finished or send anymore.
+call the function and async-queue send the request on the right time for you
+
+
+### notes
+- every function in `requestFuncs` you pass to `requestInit` must return a promise
+
+- until now, async-queue only supports an order -- a request before others
 
