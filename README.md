@@ -23,7 +23,7 @@ requestInit(requestFuncs /* object listed all your requests*/, fasle /* disable 
 
 that's all.
 
-you needn't care about has the first request finished or send anymore.
+you needn't care about if the first request has finished or send anymore.
 call the function and async-queue send the request on the right time for you
 
 
