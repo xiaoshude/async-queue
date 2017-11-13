@@ -1,14 +1,12 @@
 /**
  * Created by fjywan on 2017/10/23.
  */
-import {request as requestTypes, init as typeInit} from './type'
 import {getFinish, setFinish, getQueue, joinQueue, clearQueue} from './queue'
 let api = {}; // 储存所有api请求函数
 let cache = {};
 let firstRequest;
-export function requestInit(requestFuncs, types, isDisableQueue, beforeAll) {
+export function requestInit(requestFuncs, isDisableQueue, beforeAll) {
   api = Object.assign({}, requestFuncs);
-  typeInit(types);
   if (isDisableQueue) {
     setFinish(true)
   }
